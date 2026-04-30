@@ -62,7 +62,7 @@ nav {
   padding: 10px;
 
   position: sticky;
-  top: 169px; /* height of header */
+  top: 175px; /* height of header */
   z-index: 999;
 }
 
