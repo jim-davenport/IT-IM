@@ -1,0 +1,254 @@
+/* Reset some default browser spacing */
+body,
+h1,
+h2,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a clean, readable font and page width */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #dbdbdb;
+}
+
+.page-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Header styling */
+header {
+  font-family: "Poppins", sans-serif;
+  background-color: #9bcbea;
+  padding: 20px;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-logo {
+  height: 90px;
+  width: auto;
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+/* Navigation spacing */
+nav {
+  background-color: #8c8c8c;
+  padding: 10px;
+
+  position: sticky;
+  top: 200px; /* height of header */
+  z-index: 999;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make links look consistent */
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
+
+/* Change link color on hover */
+nav a:hover {
+  color: #9bcbea;
+  text-decoration: underline;
+}
+
+/* Headings */
+h1,
+h2 {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+/* Paragraph spacing */
+p {
+  margin-bottom: 15px;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main ul {
+  padding-left: 20px; /* clean, consistent indent */
+  margin-left: 0; /* remove browser default */
+  list-style-position: inside; /* optional: keeps bullets aligned */
+}
+
+/* Contact Form Styling */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels */
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-top: 15px;
+}
+
+/* Inputs + Textarea */
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #9bcbea;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+}
+
+form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Inputs on focus */
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #6aaed6;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(107, 174, 214, 0.5);
+}
+
+/* Submit Button */
+form button,
+form input[type="submit"] {
+  background-color: #9bcbea;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+form button:hover,
+form input[type="submit"]:hover {
+  background-color: #6aaed6;
+}
+
+/* Map container styling */
+.map-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive iframe */
+.map-container iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: 6px;
+}
+
+/* Footer styling */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  background-color: #9bcbea;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+  color: rgb(255, 255, 255);
+}
+
+/* --------------------------- */
+/* RESPONSIVE ADJUSTMENTS      */
+/* --------------------------- */
+
+@media (max-width: 600px) {
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: block;
+  }
+
+  /* Collapse the entire nav container */
+  nav {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.4s ease;
+
+    position: static; /* FIX */
+    top: auto; /* FIX */
+  }
+
+  /* Expanded state when hamburger is clicked */
+  nav.open {
+    max-height: 300px; /* enough room for your links */
+    padding: 10px; /* restore padding when open */
+  }
+
+  /* Stack nav links vertically on mobile */
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Optional: reduce body padding on small screens */
+  body {
+    padding: 10px;
+  }
+
+  .map-container iframe {
+    height: 250px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+}
