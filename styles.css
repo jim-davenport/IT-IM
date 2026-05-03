@@ -200,6 +200,53 @@ form input[type="submit"]:hover {
   border-radius: 6px;
 }
 
+/* Gallery Section Styling */
+.gallery-section {
+  margin: 40px 0;
+}
+
+.gallery-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.gallery-item {
+  flex: 1;
+  min-width: 280px;
+  max-width: 300px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-item h3 {
+  margin: 15px;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.gallery-item p {
+  margin: 0 15px 15px 15px;
+  color: #666;
+  font-size: 0.95rem;
+}
+
 /* Footer styling */
 footer {
   margin-top: 40px;
@@ -255,5 +302,20 @@ footer {
   header h1 {
     font-size: 1.6rem;
     line-height: 1.2;
+  }
+
+  /* Gallery responsive on mobile */
+  .gallery-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .gallery-item {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .gallery-item img {
+    height: 200px;
   }
 }
